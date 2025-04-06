@@ -12,7 +12,8 @@ while true; do
     if [ "$battery_percentage" -le 20 ] && [ "$notified" = false ]; then
         # Display a warning pop-up
 		notify-send --urgency=critical --expire-time=0 "Battery Alert" "Battery is at $battery_percentage%. Please plug in your charger."
-		
+		espeak "Battery, low."
+
         # Set the flag to true so the notification won't be shown again
         notified=true
     fi
