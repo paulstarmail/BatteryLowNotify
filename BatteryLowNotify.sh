@@ -18,6 +18,11 @@ while true; do
         notified=true
     fi
 
+    # Reset the notified flag if battery percentage goes above 20%
+    if [ "$battery_percentage" -gt 20 ]; then
+        notified=false
+    fi
+
     # Wait for 30 seconds before checking again
     sleep 30
 done
